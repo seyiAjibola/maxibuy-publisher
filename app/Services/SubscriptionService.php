@@ -43,7 +43,7 @@ class SubscriptionService
                         : [ 'message' => [
                                 'error' => 'Could not subscribe at this moment, something went wrong! Try again.'
                             ],
-                            'code' => 400
+                            'code' => 507
                         ];
     }
 

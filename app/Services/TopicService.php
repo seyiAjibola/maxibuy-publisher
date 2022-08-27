@@ -21,7 +21,7 @@ class TopicService
         $published = tap($this->topicModel->where('slug', $topic))
                     ->update(['article' => $requestData->article])
                     ->first();
-                    
+
         //send notification to subscribers
         event(new NotifySubscriber($published));
         
@@ -29,7 +29,7 @@ class TopicService
                     : [ 'message' => [ 
                             'error' => 'Article could not be published! Try again.'
                         ],
-                        'code' => 400
+                        'code' => 507
                     ];
     }
     
