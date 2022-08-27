@@ -24,6 +24,7 @@ class TopicRequest extends FormRequest
     public function rules()
     {
         return [
+            'slug' => ['unique'],
             'article' => ['required']
         ];
     }

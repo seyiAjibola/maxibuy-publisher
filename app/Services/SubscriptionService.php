@@ -41,7 +41,7 @@ class SubscriptionService
                                 'code' => 200
                             ]
                         : [ 'message' => [
-                                'error' => 'Could not subscribe at this moment, something went wrong! Try again.$subrcibed->url'
+                                'error' => 'Could not subscribe at this moment, something went wrong! Try again.'
                             ],
                             'code' => 400
                         ];
