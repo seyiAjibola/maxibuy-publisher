@@ -41,14 +41,12 @@ class SendHttpNotification
         //get subscribed urls for article
         $topicSubscribers = (new Subscription)->where('topic_id', $published->id)->get();
         foreach($topicSubscribers as $topicSubscriber) {
-
             //send notification request
             $response = Http::post($topicSubscriber->url, $data);
             if(!$response->ok()) {
                 //log error message
-                Log::error('Notification not sent to '. $topicSubscriber->url);
+                Log::channel('maxibuy-test-failed-notification')->info('Notification not sent to '. $topicSubscriber->url);
             }
-
         }
     }
 }

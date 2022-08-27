@@ -117,6 +117,11 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+        'maxibuy-test-failed-notification' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/maxibuy-test-failed-notification.log'),
+            'level' => 'info',
+        ],
     ],
 
 ];
