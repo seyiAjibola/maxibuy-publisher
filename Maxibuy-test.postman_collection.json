@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "c78d69a9-0a06-4a5e-8e62-4a13240178c7",
+		"name": "Maxibuy-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Subscribe to Topic on Publisher",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\" : \"http://127.0.0.1:9000/api/notification\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/subscribe/politics-and-governance",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"subscribe",
+						"politics-and-governance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publish to Topic on Publisher",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"article\": [\r\n        {\r\n            \"heading\": \"Heading 1\",\r\n            \"paragraph_1\" : \"Content for paragraph 1\",\r\n            \"paragraph_2\" : \"Content for paragraph 2\"\r\n\r\n        },\r\n        {\r\n            \"heading\": \"Heading 2\",\r\n            \"paragraph_1\" : \"Content for paragraph 1\",\r\n            \"paragraph_2\" : \"Content for paragraph 2\"\r\n\r\n        },\r\n        {\r\n            \"heading\": \"Heading 3\",\r\n            \"paragraph_1\" : \"Content for paragraph 1\",\r\n            \"paragraph_2\" : \"Content for paragraph 2\"\r\n\r\n        }\r\n    ]\r\n        \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/publish/politics-and-governance",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"publish",
+						"politics-and-governance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Notification from Publisher Server [testing endpoint with postman ] - Subscriber",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"topic\": \"test\",\r\n    \"data\": [\r\n        {\r\n            \"heading\": \"Heading 1\",\r\n            \"paragraph_1\" : \"Content for paragraph 1\",\r\n            \"paragraph_2\" : \"Content for paragraph 2\"\r\n\r\n        },\r\n        {\r\n            \"heading\": \"Heading 2\",\r\n            \"paragraph_1\" : \"Content for paragraph 1\",\r\n            \"paragraph_2\" : \"Content for paragraph 2\"\r\n\r\n        },\r\n        {\r\n            \"heading\": \"Heading 3\",\r\n            \"paragraph_1\" : \"Content for paragraph 1\",\r\n            \"paragraph_2\" : \"Content for paragraph 2\"\r\n\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9000/api/notification",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"notification"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
