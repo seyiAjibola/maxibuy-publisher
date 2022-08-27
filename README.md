@@ -1,6 +1,4 @@
-<p align="center">Installations</p>
-
-## Publisher Intructions
+## Publisher Installations
 
 - Clone or Download the Repo.
 - Cd into your project directory.
